@@ -1,16 +1,16 @@
 using System;
 using System.Linq;
 
-namespace DataMunglingKata.UnitTests
+namespace DataMunglingKata
 {
     public class WeatherDataParser
     {
         public int[] Parse(string testData)
         {
-            return testData.Split(new string[]{" ", "*"}, StringSplitOptions.RemoveEmptyEntries)
+            return testData.Split(new []{" ", "*"}, StringSplitOptions.RemoveEmptyEntries)
                 .Select(s =>
                 {
-                    Int32.TryParse(s, out int r);
+                    int.TryParse(s, out var r);
                     return r;
                 })
                 .ToArray();
