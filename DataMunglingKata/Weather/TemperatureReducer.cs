@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataMunglingKata
+namespace DataMunglingKata.Weather
 {
     public class TemperatureReducer
     {

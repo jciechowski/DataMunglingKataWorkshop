@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DataMunglingKata
+namespace DataMunglingKata.Weather
 {
     public class LowestTemperatureAmplitudeFinder
     {

@@ -1,6 +1,7 @@
-﻿using Xunit;
+﻿using DataMunglingKata.Weather;
+using Xunit;
 
-namespace DataMunglingKata.UnitTests
+namespace DataMunglingKata.UnitTests.Weather
 {
     public class WeatherDataParserTests
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace DataMunglingKata
+namespace DataMunglingKata.Weather
 {
     public class WeatherDataParser
     {

@@ -1,7 +1,8 @@
 ﻿using System.Linq;
+using DataMunglingKata.Weather;
 using Xunit;
 
-namespace DataMunglingKata.UnitTests
+namespace DataMunglingKata.UnitTests.Weather
 {
     public class FileReaderTests
     {
