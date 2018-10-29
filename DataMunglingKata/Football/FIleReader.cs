@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using DataMunglingKata.Football.Interfaces;
 
 namespace DataMunglingKata.Football
 {
-    public class FileParser : IFileParser
+    public class FileReader : IFileReader
     {
         private readonly ISystemFile _systemFile;
         private readonly string _filePath;
 
-        public FileParser( ISystemFile systemFile, string filePath )
+        public FileReader( ISystemFile systemFile, string filePath )
         {
             if ( string.IsNullOrEmpty( filePath ) )
             {
@@ -20,16 +21,14 @@ namespace DataMunglingKata.Football
             _filePath = filePath;
         }
 
-        public IEnumerable<(string teamName, int goalsFor, int goalsAgainst)> GetTeamData()
+        public IEnumerable<string> GetRawFileContent()
         {
             if ( !_systemFile.Exists( _filePath ) )
             {
                 throw new FileNotFoundException();
             }
 
-            var teamData = new List<(string teamName, int goalsFor, int goalsAgainst)>() { ("test", 1 ,1) };
-
-            return teamData;
+            return _systemFile.ReadAll( _filePath );
         }
     }
 }

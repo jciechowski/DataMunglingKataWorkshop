@@ -1,20 +1,21 @@
 ﻿using System;
+using DataMunglingKata.Football.Interfaces;
 
 namespace DataMunglingKata.Football
 {
     public class MinimumGoalDifferenceTeamFinder
     {
-        private readonly IFileParser _ifIleParser;
+        private readonly ITeamDataProvider _teamDataProvider;
 
-        public MinimumGoalDifferenceTeamFinder( IFileParser ifIleParser )
+        public MinimumGoalDifferenceTeamFinder( ITeamDataProvider teamDataProvider )
         {
-            _ifIleParser = ifIleParser;
+            _teamDataProvider = teamDataProvider;
         }
 
         public string FindTeam()
         {
 
-            var teamResults = _ifIleParser.GetTeamData();
+            var teamResults = _teamDataProvider.GetTeamData();
             var teamName = "";
             var minGoalsDifference = 100;
 
