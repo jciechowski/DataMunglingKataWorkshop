@@ -7,12 +7,12 @@ namespace DataMunglingKata.Football
 {
     public class FileReader : IFileReader
     {
-        private readonly ISystemFile _systemFile;
         private readonly string _filePath;
+        private readonly ISystemFile _systemFile;
 
-        public FileReader( ISystemFile systemFile, string filePath )
+        public FileReader(ISystemFile systemFile, string filePath)
         {
-            if ( string.IsNullOrEmpty( filePath ) )
+            if (string.IsNullOrEmpty(filePath))
             {
                 throw new ArgumentException();
             }
@@ -23,12 +23,12 @@ namespace DataMunglingKata.Football
 
         public IEnumerable<string> GetRawFileContent()
         {
-            if ( !_systemFile.Exists( _filePath ) )
+            if (!_systemFile.Exists(_filePath))
             {
                 throw new FileNotFoundException();
             }
 
-            return _systemFile.ReadAll( _filePath );
+            return _systemFile.ReadAll(_filePath);
         }
     }
 }

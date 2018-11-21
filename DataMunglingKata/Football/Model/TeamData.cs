@@ -1,6 +1,8 @@
-﻿namespace DataMunglingKata.Football.Model
+﻿using System.Diagnostics;
+
+namespace DataMunglingKata.Football.Model
 {
-    public class TeamData
+    public struct TeamData
     {
         public int GoalsFor { get; }
         public int GoalsAgainst { get; }
@@ -18,6 +20,11 @@
             goalsFor = GoalsFor;
             goalsAgainst = GoalsAgainst;
             teamName = TeamName;
+        }
+
+        public override string ToString()
+        {
+            return $"{TeamName}, {GoalsFor}:{GoalsAgainst}";
         }
     }
 }
